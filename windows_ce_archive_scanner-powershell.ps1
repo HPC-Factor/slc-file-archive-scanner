@@ -1,5 +1,5 @@
-﻿# © HPC:Factor 2025. Windows CE local archive hash scanner
-# Version: 1.0.0.20250924
+# © HPC:Factor 2025. Windows CE local archive hash scanner
+# Version: 1.0.0.20250926
 
 # Please upload your archive scan file to https://www.hpcfactor.com/downloads/archive-check/ to see if you have
 # any files that we do not have.
@@ -16,7 +16,7 @@ $arrPath     = New-Object System.Collections.ArrayList
 $arrFilename = New-Object System.Collections.ArrayList
 $arrLength   = New-Object System.Collections.ArrayList
 $arrHash     = New-Object System.Collections.ArrayList
-$files       = Get-ChildItem -Path "$ArchivePath\*" -Include "*.exe", "*.msi", "*.cab", "*.zip" -Recurse
+$files       = Get-ChildItem -Path "$ArchivePath\*" -Include "*.exe", "*.msi", "*.cab", "*.zip", "*.lzh" -Recurse
 $OutPath     = "$([Environment]::GetFolderPath(“Desktop”))\Windows_CE_Files.txt"
 
 cls
