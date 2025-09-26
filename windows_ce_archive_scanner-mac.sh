@@ -1,6 +1,6 @@
 #!/bin/zsh
 # © HPC:Factor 2025. Windows CE local archive hash scanner (macOS zsh)
-# Version: 1.0.0.20250924-mac
+# Version: 1.0.0.20250926-mac
 # converted to mac by stingraze on 9/25/2025 - 4:03AM JST using ChatGPT GPT-5
 # Usage:
 #   1) Optional: pass the archive directory as the first argument.
