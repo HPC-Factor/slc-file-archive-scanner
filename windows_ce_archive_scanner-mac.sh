@@ -76,7 +76,7 @@ while IFS= read -r -d '' file; do
   printf "%s|%s|%s|%s\n" "$file" "$filename" "$size" "$hash" >> "$OUT_PATH"
   (( count += 1 ))
 done < <(find "$ARCHIVE_DIR" -type f \
-          \( -iname "*.exe" -o -iname "*.msi" -o -iname "*.cab" -o -iname "*.zip" \) \
+          \( -iname "*.exe" -o -iname "*.msi" -o -iname "*.cab" -o -iname "*.zip" -o -iname "*.lzh" \) \
           -print0)
 
 if (( count > 0 )); then
