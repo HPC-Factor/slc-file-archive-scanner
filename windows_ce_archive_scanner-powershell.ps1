@@ -1,13 +1,23 @@
-# © HPC:Factor 2025. Windows CE local archive hash scanner
-# Version: 1.0.0.20250926
+# © HPC:Factor 2025 - 2026. Windows CE local archive hash scanner
+# Version: 1.0.1.20260525
 
 # Please upload your archive scan file to https://www.hpcfactor.com/downloads/archive-check/ to see if you have
 # any files that we do not have.
+#
+# Usage
+# Open PowerShell
+# Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope Process
+# .\windows_ce_archive_scanner-powershell.ps1 -ArchivePath "C:\Path\To\My\Archive\Folder"
+#
 # Once run, the output file will be "Windows_CE_Files.txt" found on your Desktop.
 
+param (
+  [Parameter(Mandatory=$true)]
+    [string]$ArchivePath
+)
  
 # Enter the full Windows File System PAth to your Windows CE Archive here
-$ArchivePath = "C:\My Archive"
+#$ArchivePath = "C:\My Archive"
 
 ########### DO NOT EDIT BELOW THIS LINE
 
@@ -17,7 +27,7 @@ $arrFilename = New-Object System.Collections.ArrayList
 $arrLength   = New-Object System.Collections.ArrayList
 $arrHash     = New-Object System.Collections.ArrayList
 $files       = Get-ChildItem -Path "$ArchivePath\*" -Include "*.exe", "*.msi", "*.cab", "*.zip", "*.lzh" -Recurse
-$OutPath     = "$([Environment]::GetFolderPath(“Desktop”))\Windows_CE_Files.txt"
+$OutPath     = "$([Environment]::GetFolderPath("Desktop"))\Windows_CE_Files.txt"
 
 cls
 Write-Host ""
